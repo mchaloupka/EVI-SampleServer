@@ -13,20 +13,20 @@ using TCode.r2rml4net.Mapping.Fluent;
 namespace Slp.r2rml4net.Server.R2RML
 {
     /// <summary>
-    /// Wrapper for the <see cref="R2RMLStorage"/>
+    /// Wrapper for the <see cref="R2RmlStorage"/>
     /// </summary>
     public class StorageWrapper
     {
         /// <summary>
         /// The storage
         /// </summary>
-        private static R2RMLStorage _storage = null;
+        private static R2RmlStorage _storage = null;
 
         /// <summary>
         /// Gets the storage.
         /// </summary>
         /// <value>The storage.</value>
-        public static R2RMLStorage Storage { get { return _storage; } }
+        public static R2RmlStorage Storage { get { return _storage; } }
 
         /// <summary>
         /// Application start.
@@ -49,7 +49,7 @@ namespace Slp.r2rml4net.Server.R2RML
                     mapping = R2RMLLoader.Load(fs);
                 }
 
-                _storage = new R2RMLStorage((new DefaultSqlDbFactory()).CreateSQLDb(connectionString), mapping, new DefaultR2RMLStorageFactory());
+                _storage = new R2RmlStorage((new DefaultSqlDbFactory()).CreateSqlDb(connectionString), mapping, new DefaultIr2RmlStorageFactory());
             }
             catch (Exception e)
             {

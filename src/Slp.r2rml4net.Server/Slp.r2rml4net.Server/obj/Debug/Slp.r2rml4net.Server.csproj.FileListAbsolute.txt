@@ -24,7 +24,6 @@ D:\Work\GitHub\DotNetR2RMLEndpoint\src\Slp.r2rml4net.Server\Slp.r2rml4net.Server
 D:\Work\GitHub\DotNetR2RMLEndpoint\src\Slp.r2rml4net.Server\Slp.r2rml4net.Server\bin\HtmlAgilityPack.pdb
 D:\Work\GitHub\DotNetR2RMLEndpoint\src\Slp.r2rml4net.Server\Slp.r2rml4net.Server\bin\HtmlAgilityPack.xml
 D:\Work\GitHub\DotNetR2RMLEndpoint\src\Slp.r2rml4net.Server\Slp.r2rml4net.Server\bin\Newtonsoft.Json.xml
-D:\Work\GitHub\DotNetR2RMLEndpoint\src\Slp.r2rml4net.Server\Slp.r2rml4net.Server\bin\Slp.r2rml4net.Storage.pdb
 D:\Work\GitHub\DotNetR2RMLEndpoint\src\Slp.r2rml4net.Server\Slp.r2rml4net.Server\bin\Slp.r2rml4net.Storage.xml
 D:\Work\GitHub\DotNetR2RMLEndpoint\src\Slp.r2rml4net.Server\Slp.r2rml4net.Server\bin\System.Web.Helpers.xml
 D:\Work\GitHub\DotNetR2RMLEndpoint\src\Slp.r2rml4net.Server\Slp.r2rml4net.Server\bin\System.Web.Mvc.xml

@@ -18,7 +18,7 @@ namespace Slp.r2rml4net.Server.R2RML
         /// <param name="t">Target Type</param>
         public bool CanLoadObject(Type t)
         {
-            if (t == typeof(R2RMLStorage))
+            if (t == typeof(R2RmlStorage))
                 return true;
             else
                 return false;
