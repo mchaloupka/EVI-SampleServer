@@ -37,6 +37,5 @@ D:\Work\GitHub\DotNetR2RMLEndpoint\src\Slp.r2rml4net.Server\Slp.r2rml4net.Server
 D:\Work\GitHub\DotNetR2RMLEndpoint\src\Slp.r2rml4net.Server\Slp.r2rml4net.Server\bin\TCode.r2rml4net.xml
 D:\Work\GitHub\DotNetR2RMLEndpoint\src\Slp.r2rml4net.Server\Slp.r2rml4net.Server\bin\VDS.Common.pdb
 D:\Work\GitHub\DotNetR2RMLEndpoint\src\Slp.r2rml4net.Server\Slp.r2rml4net.Server\bin\VDS.Common.xml
-D:\Work\GitHub\DotNetR2RMLEndpoint\src\Slp.r2rml4net.Server\Slp.r2rml4net.Server\obj\Debug\Slp.r2rml4net.Server.csprojResolveAssemblyReference.cache
 D:\Work\GitHub\DotNetR2RMLEndpoint\src\Slp.r2rml4net.Server\Slp.r2rml4net.Server\obj\Debug\Slp.r2rml4net.Server.dll
 D:\Work\GitHub\DotNetR2RMLEndpoint\src\Slp.r2rml4net.Server\Slp.r2rml4net.Server\obj\Debug\Slp.r2rml4net.Server.pdb
