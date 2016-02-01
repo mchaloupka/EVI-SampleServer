@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.IO;
-using System.Linq;
-using System.Web;
 using Slp.r2rml4net.Storage;
 using Slp.r2rml4net.Storage.Bootstrap;
-using Slp.r2rml4net.Storage.Sql.Vendor;
 using TCode.r2rml4net;
 using TCode.r2rml4net.Mapping.Fluent;
 
@@ -20,13 +15,13 @@ namespace Slp.r2rml4net.Server.R2RML
         /// <summary>
         /// The storage
         /// </summary>
-        private static R2RmlStorage _storage = null;
+        private static R2RMLStorage _storage = null;
 
         /// <summary>
         /// Gets the storage.
         /// </summary>
         /// <value>The storage.</value>
-        public static R2RmlStorage Storage { get { return _storage; } }
+        public static R2RMLStorage Storage { get { return _storage; } }
 
         /// <summary>
         /// Application start.
@@ -49,7 +44,8 @@ namespace Slp.r2rml4net.Server.R2RML
                     mapping = R2RMLLoader.Load(fs);
                 }
 
-                _storage = new R2RmlStorage((new DefaultSqlDbFactory()).CreateSqlDb(connectionString), mapping, new DefaultIr2RmlStorageFactory());
+                var sqlFactory = new r2rml4net.Storage.Database.Vendor.MsSql.MsSqlDbFactory();
+                _storage = new R2RMLStorage(sqlFactory.CreateSqlDb(connectionString), mapping, new R2RMLDefaultStorageFactory());
             }
             catch (Exception e)
             {

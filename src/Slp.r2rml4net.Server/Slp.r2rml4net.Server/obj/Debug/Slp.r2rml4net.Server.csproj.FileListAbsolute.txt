@@ -20,6 +20,7 @@ D:\Work\GitHub\DotNetR2RMLEndpoint\src\Slp.r2rml4net.Server\Slp.r2rml4net.Server
 D:\Work\GitHub\DotNetR2RMLEndpoint\src\Slp.r2rml4net.Server\Slp.r2rml4net.Server\bin\WebGrease.dll
 D:\Work\GitHub\DotNetR2RMLEndpoint\src\Slp.r2rml4net.Server\Slp.r2rml4net.Server\bin\Antlr3.Runtime.pdb
 D:\Work\GitHub\DotNetR2RMLEndpoint\src\Slp.r2rml4net.Server\Slp.r2rml4net.Server\bin\DatabaseSchemaReader.xml
+D:\Work\GitHub\DotNetR2RMLEndpoint\src\Slp.r2rml4net.Server\Slp.r2rml4net.Server\bin\dotNetRDF.pdb
 D:\Work\GitHub\DotNetR2RMLEndpoint\src\Slp.r2rml4net.Server\Slp.r2rml4net.Server\bin\dotNetRDF.xml
 D:\Work\GitHub\DotNetR2RMLEndpoint\src\Slp.r2rml4net.Server\Slp.r2rml4net.Server\bin\HtmlAgilityPack.pdb
 D:\Work\GitHub\DotNetR2RMLEndpoint\src\Slp.r2rml4net.Server\Slp.r2rml4net.Server\bin\HtmlAgilityPack.xml
