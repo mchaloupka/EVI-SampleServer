@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/src/Slp.r2rml4net.Server/.vs
+/src/Slp.r2rml4net.Server/Slp.r2rml4net.Server/obj
+*.user
+/src/Slp.r2rml4net.Server/Slp.r2rml4net.Server/bin
