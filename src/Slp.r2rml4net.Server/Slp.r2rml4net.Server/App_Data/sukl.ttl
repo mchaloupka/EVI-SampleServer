@@ -1,0 +1,292 @@
+# SUKL database snapshot (partial) from: https://opendata.sukl.cz/?q=katalog/databaze-lecivych-pripravku-dlp
+
+@base <http://example.com/base/> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix sukl: <http://opendata.sukl.cz/dlp/> .
+@prefix suklc: <http://opendata.sukl.cz/dlp/c/> .
+@prefix suklp: <http://opendata.sukl.cz/dlp/p/> .
+
+#TABLE [dbo].[addiction](
+#    [addiction_id] [nvarchar](1) NOT NULL,
+#    [label] [nvarchar](255) NOT NULL,
+#)
+<#AddictionTriples> a rr:TriplesMap;
+	rr:logicalTable [ rr:tableName "addiction"; ];
+	rr:subjectMap [
+		rr:template "http://opendata.sukl.cz/dlp/addiction/{addiction_id}";
+		rr:class suklc:addiction;
+	];
+	rr:predicateObjectMap [
+		rr:predicate suklp:label_cze;
+		rr:objectMap [ rr:column "label"; ];
+	];
+.
+
+#TABLE [dbo].[doping](
+#    [doping_id] [nvarchar](5) NOT NULL,
+#    [label] [nvarchar](255) NOT NULL,
+#)
+<#DopingTriples> a rr:TriplesMap;
+	rr:logicalTable [ rr:tableName "doping"; ];
+	rr:subjectMap [
+		rr:template "http://opendata.sukl.cz/dlp/doping/{doping_id}";
+		rr:class suklc:doping;
+	];
+	rr:predicateObjectMap [
+		rr:predicate suklp:label_cze;
+		rr:objectMap [ rr:column "label"; ];
+	];
+.
+
+#TABLE [dbo].[way](
+#    [way_id] [nvarchar](7) NOT NULL,
+#    [label] [nvarchar](255) NOT NULL,
+#    [label_en] [nvarchar](255) NOT NULL,
+#    [label_lat] [nvarchar](255) NOT NULL,
+#)
+<#WayTriples> a rr:TriplesMap;
+	rr:logicalTable [ rr:tableName "way"; ];
+	rr:subjectMap [
+		rr:template "http://opendata.sukl.cz/dlp/way/{way_id}";
+		rr:class suklc:way;
+	];
+	rr:predicateObjectMap [
+		rr:predicate suklp:label_cze;
+		rr:objectMap [ rr:column "label"; ];
+	];
+	rr:predicateObjectMap [
+		rr:predicate suklp:label_en;
+		rr:objectMap [ rr:column "label_en"; ];
+	];
+	rr:predicateObjectMap [
+		rr:predicate suklp:label_inn;
+		rr:objectMap [ rr:column "label_lat"; ];
+	];
+.
+
+#TABLE [dbo].[form](
+#    [way_id] [nvarchar](7) NOT NULL,
+#    [form_id] [nvarchar](20) NOT NULL,
+#    [label] [nvarchar](255) NOT NULL,
+#    [label_en] [nvarchar](255) NOT NULL,
+#    [label_lat] [nvarchar](255) NOT NULL
+#)
+<#FormTriples> a rr:TriplesMap;
+	rr:logicalTable [ rr:tableName "form"; ];
+	rr:subjectMap [
+		rr:template "http://opendata.sukl.cz/dlp/form/{way_id}/{form_id}";
+		rr:class suklc:form;
+	];
+	rr:predicateObjectMap [
+		rr:predicate suklp:label_cze;
+		rr:objectMap [ rr:column "label"; ];
+	];
+	rr:predicateObjectMap [
+		rr:predicate suklp:label_en;
+		rr:objectMap [ rr:column "label_en"; ];
+	];
+	rr:predicateObjectMap [
+		rr:predicate suklp:label_inn;
+		rr:objectMap [ rr:column "label_lat"; ];
+	];
+	rr:predicateObjectMap [
+		rr:predicate suklp:way;
+		rr:objectMap [
+			rr:parentTriplesMap <#WayTriples>;
+			rr:joinCondition [
+				rr:child "way_id";
+				rr:parent "way_id";
+			];
+		];
+	];
+.
+
+#TABLE [dbo].[medicinal](
+#    [medicinal_id] [int] NOT NULL,
+#    [label] [nvarchar](255) NOT NULL,
+#    [label_inn] [nvarchar](255) NOT NULL,
+#    [label_en] [nvarchar](255) NOT NULL,
+#    [addiction_id] [nvarchar](1) NULL,
+#    [doping_id] [nvarchar](5) NULL,
+#)
+<#MedicinalTriples> a rr:TriplesMap;
+	rr:logicalTable [ rr:tableName "medicinal"; ];
+	rr:subjectMap [
+		rr:template "http://opendata.sukl.cz/dlp/medicinal/{medicinal_id}";
+		rr:class suklc:medicinal;
+	];
+	rr:predicateObjectMap [
+		rr:predicate suklp:label_cze;
+		rr:objectMap [ rr:column "label"; ];
+	];
+	rr:predicateObjectMap [
+		rr:predicate suklp:label_en;
+		rr:objectMap [ rr:column "label_en"; ];
+	];
+	rr:predicateObjectMap [
+		rr:predicate suklp:label_inn;
+		rr:objectMap [ rr:column "label_inn"; ];
+	];
+	rr:predicateObjectMap [
+		rr:predicate suklp:addiction;
+		rr:objectMap [
+			rr:parentTriplesMap <#AddictionTriples>;
+			rr:joinCondition [
+				rr:child "addiction_id";
+				rr:parent "addiction_id";
+			];
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate suklp:doping;
+		rr:objectMap [
+			rr:parentTriplesMap <#DopingTriples>;
+			rr:joinCondition [
+				rr:child "doping_id";
+				rr:parent "doping_id";
+			];
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate suklp:contained_in;
+		rr:objectMap [
+			rr:parentTriplesMap <#CompositionTriples>;
+			rr:joinCondition [
+				rr:child "medicinal_id";
+				rr:parent "medicinal_id";
+			];
+		];
+	];
+.
+
+#TABLE [dbo].[curative](
+#    [curative_id] [int] NOT NULL,
+#    [label] [nvarchar](255) NOT NULL,
+#    [label_ext] [nvarchar](255) NOT NULL,
+#    [doping_id] [nvarchar](5) NULL,
+#    [addiction_id] [nvarchar](1) NULL,
+#    [way_id] [nvarchar](7) NULL,
+#    [form_id] [nvarchar](20) NULL,
+#    [package] [nvarchar](50) NOT NULL,
+#)
+<#CurativeTriples> a rr:TriplesMap;
+	rr:logicalTable [ rr:tableName "curative"; ];
+	rr:subjectMap [
+		rr:template "http://opendata.sukl.cz/dlp/curative/{curative_id}";
+		rr:class suklc:curative;
+	];
+	rr:predicateObjectMap [
+		rr:predicate suklp:label_cze;
+		rr:objectMap [ rr:column "label"; ];
+	];
+	rr:predicateObjectMap [
+		rr:predicate suklp:label_ext;
+		rr:objectMap [ rr:column "label_ext"; ];
+	];
+	rr:predicateObjectMap [
+		rr:predicate suklp:package;
+		rr:objectMap [ rr:column "package"; ];
+	];
+	rr:predicateObjectMap [
+		rr:predicate suklp:addiction;
+		rr:objectMap [
+			rr:parentTriplesMap <#AddictionTriples>;
+			rr:joinCondition [
+				rr:child "addiction_id";
+				rr:parent "addiction_id";
+			];
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate suklp:doping;
+		rr:objectMap [
+			rr:parentTriplesMap <#DopingTriples>;
+			rr:joinCondition [
+				rr:child "doping_id";
+				rr:parent "doping_id";
+			];
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate suklp:way;
+		rr:objectMap [
+			rr:parentTriplesMap <#WayTriples>;
+			rr:joinCondition [
+				rr:child "way_id";
+				rr:parent "way_id";
+			];
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate suklp:form;
+		rr:objectMap [
+			rr:parentTriplesMap <#FormTriples>;
+			rr:joinCondition [
+				rr:child "form_id";
+				rr:parent "form_id";
+			];
+			rr:joinCondition [
+				rr:child "way_id";
+				rr:parent "way_id";
+			];
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate suklp:contains;
+		rr:objectMap [
+			rr:parentTriplesMap <#CompositionTriples>;
+			rr:joinCondition [
+				rr:child "curative_id";
+				rr:parent "curative_id";
+			];
+		];
+	];
+.
+
+#TABLE [dbo].[composition](
+#    [curative_id] [int] NOT NULL,
+#    [medicinal_id] [int] NOT NULL,
+#    [auxiliary] [bit] NOT NULL,
+#    [amount_from] [decimal](18, 5) NULL,
+#    [amount_to] [decimal](18, 5) NULL,
+#    [amount_unit] [nvarchar](5) NULL
+#)
+<#CompositionTriples> a rr:TriplesMap;
+	rr:logicalTable [ rr:tableName "composition"; ];
+	rr:subjectMap [
+		rr:template "http://opendata.sukl.cz/dlp/composition/{curative_id}/{medicinal_id}";
+		rr:class suklc:composition;
+	];
+	rr:predicateObjectMap [
+		rr:predicate suklp:amount_f;
+		rr:objectMap [ rr:column "amount_from"; ];	
+	];
+	rr:predicateObjectMap [
+		rr:predicate suklp:amount;
+		rr:objectMap [ rr:column "amount_to"; ];	
+	];
+	rr:predicateObjectMap [
+		rr:predicate suklp:unit;
+		rr:objectMap [ rr:column "amount_unit"; ];	
+	];
+	rr:predicateObjectMap [
+		rr:predicate suklp:curative;
+		rr:objectMap [
+			rr:parentTriplesMap <#CurativeTriples>;
+			rr:joinCondition [
+				rr:child "curative_id";
+				rr:parent "curative_id";
+			];
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate suklp:medicinal;
+		rr:objectMap [
+			rr:parentTriplesMap <#MedicinalTriples>;
+			rr:joinCondition [
+				rr:child "medicinal_id";
+				rr:parent "medicinal_id";
+			];
+		];
+	];
+.
