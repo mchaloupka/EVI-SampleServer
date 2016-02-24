@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -7,6 +9,8 @@ using System.Web;
 using System.Web.Mvc;
 using Slp.r2rml4net.Server.Models.Json;
 using Slp.r2rml4net.Server.R2RML;
+using Slp.r2rml4net.Server.Writers;
+using TCode.r2rml4net;
 using VDS.RDF;
 using VDS.RDF.Query;
 
@@ -117,6 +121,35 @@ namespace Slp.r2rml4net.Server.Controllers
         private UrlHelper GetUrlHelper()
         {
             return new UrlHelper(HttpContext.Request.RequestContext);
+        }
+
+        public void Dump()
+        {
+            try
+            {
+                var mapping = StorageWrapper.Mapping;
+
+                using (var connection = new SqlConnection(StorageWrapper.ConnectionString))
+                using (var processor = new W3CR2RMLProcessor(connection))
+                using (var turtleWriter = new TurtleRdfWriter(Response.OutputStream))
+                {
+                    Response.Clear();
+                    Response.ClearContent();
+                    Response.ClearHeaders();
+                    Response.Buffer = false;
+                    Response.BufferOutput = false;
+                    Response.ContentType = "application/octet-stream";
+                    Response.AppendHeader("Content-Type", "application/octet-stream");
+                    Response.AppendHeader("Content-Disposition", "attachment; filename=Dump.ttl");
+                    Response.Flush();
+                    processor.GenerateTriples(mapping, turtleWriter);
+                }
+            }
+            catch (Exception)
+            {
+                Response.StatusCode = 500;
+                Response.Write("Dump creation failed");
+            }
         }
     }
 }

@@ -33,19 +33,19 @@ namespace Slp.r2rml4net.Server.R2RML
             try
             {
                 var mappingPath = System.Configuration.ConfigurationManager.AppSettings["r2rmlConfig"];
-                var connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["r2rmlstoreconnection"].ConnectionString;
+                ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["r2rmlstoreconnection"].ConnectionString;
 
-                IR2RML mapping = null;
+                Mapping = null;
 
                 var path = System.Web.Hosting.HostingEnvironment.MapPath(mappingPath);
 
                 using (var fs = new FileStream(path, FileMode.Open))
                 {
-                    mapping = R2RMLLoader.Load(fs);
+                    Mapping = R2RMLLoader.Load(fs);
                 }
 
                 var sqlFactory = new r2rml4net.Storage.Database.Vendor.MsSql.MsSqlDbFactory();
-                _storage = new R2RMLStorage(sqlFactory.CreateSqlDb(connectionString), mapping, new R2RMLDefaultStorageFactory());
+                _storage = new R2RMLStorage(sqlFactory.CreateSqlDb(ConnectionString), Mapping, new R2RMLDefaultStorageFactory());
             }
             catch (Exception e)
             {
@@ -67,5 +67,15 @@ namespace Slp.r2rml4net.Server.R2RML
         /// </summary>
         /// <value>The start exception.</value>
         public static Exception StartException { get; private set; }
+        /// <summary>
+        /// Gets the mapping.
+        /// </summary>
+        /// <value>The mapping.</value>
+        public static IR2RML Mapping { get; private set; }
+        /// <summary>
+        /// Gets the connection string.
+        /// </summary>
+        /// <value>The connection string.</value>
+        public static string ConnectionString { get; private set; }
     }
 }
