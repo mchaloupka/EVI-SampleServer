@@ -36,6 +36,7 @@ namespace Slp.r2rml4net.Server.Writers
             _outputStream.Write(" ");
             _outputStream.Write(GenerateNodeOutput(t.Object, TripleSegment.Object));
             _outputStream.Write(".");
+            _outputStream.WriteLine();
             return true;
         }
 
