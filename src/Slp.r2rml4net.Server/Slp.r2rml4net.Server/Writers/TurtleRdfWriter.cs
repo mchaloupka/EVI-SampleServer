@@ -14,7 +14,7 @@ namespace Slp.r2rml4net.Server.Writers
     public class TurtleRdfWriter : BaseRdfHandler, IDisposable
     {
         private readonly StreamWriter _outputStream;
-        private TurtleFormatter _turtleFormatter;
+        private readonly TurtleFormatter _turtleFormatter;
 
         public TurtleRdfWriter(Stream outputStream)
         {
