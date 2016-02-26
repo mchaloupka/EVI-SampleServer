@@ -122,7 +122,7 @@ namespace Slp.r2rml4net.Server.Controllers
         /// <exception cref="System.Exception">Unknown query result</exception>
         [HttpGet]
         [ValidateInput(false)]
-        public void SaveQueryResult(string query)
+        public void Query(string query)
         {
             try
             {

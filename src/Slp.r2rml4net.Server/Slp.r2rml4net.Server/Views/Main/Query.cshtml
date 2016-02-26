@@ -81,12 +81,18 @@
 
             $('#execute-button').removeClass('active');
         });
+    }
 
-
+    function updateOpen()
+    {
+        var query = encodeURIComponent($('#query-textarea').val());
+        var href = '@Url.Action("Query", "Json")?query=' + query;
+        $('#open-button').attr('href', href);
     }
 
     $(document).ready(function () {
         $('#execute-button').click(function () { query(); });
+        $('#open-button').click(function () { updateOpen(); });
     });
 </script>
 
@@ -108,6 +114,10 @@
                 <i class="fa fa-spinner fa-spin"></i>
             </span>Execute
         </button>
+
+        <a id="open-button" target="_blank" href="#" class="btn btn-info">
+            Open
+        </a>
     </div>
 </div>
 
