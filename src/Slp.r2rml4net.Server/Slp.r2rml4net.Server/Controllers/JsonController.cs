@@ -143,6 +143,7 @@ namespace Slp.r2rml4net.Server.Controllers
                     Response.AppendHeader("Content-Disposition", "attachment; filename=Dump.ttl");
                     Response.Flush();
                     processor.GenerateTriples(mapping, turtleWriter);
+                    Response.End();
                 }
             }
             catch (Exception)
