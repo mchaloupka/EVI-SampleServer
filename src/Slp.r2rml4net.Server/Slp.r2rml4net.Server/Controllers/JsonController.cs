@@ -115,6 +115,34 @@ namespace Slp.r2rml4net.Server.Controllers
         }
 
         /// <summary>
+        /// Gets the query result.
+        /// </summary>
+        /// <param name="query">The query.</param>
+        /// <returns>ActionResult.</returns>
+        /// <exception cref="System.Exception">Unknown query result</exception>
+        [HttpGet]
+        [ValidateInput(false)]
+        public void SaveQueryResult(string query)
+        {
+            try
+            {
+                using (var turtleWriter = new TurtleRdfWriter(Response.OutputStream))
+                using(var xmlWriter = new XmlSparqlWriter(Response.OutputStream))
+                {
+                    var responseWriterHelper = new ResponseWriterHelper(Response, xmlWriter, "application/xml", turtleWriter, "text/turtle");
+                    StorageWrapper.Storage.Query(responseWriterHelper, responseWriterHelper, query);
+                }
+
+                Response.End();
+            }
+            catch (Exception ex)
+            {
+                Response.StatusCode = 400;
+                Response.Write("Query failed");
+            }
+        }
+
+        /// <summary>
         /// Gets the URL helper.
         /// </summary>
         /// <returns>UrlHelper.</returns>
@@ -143,8 +171,9 @@ namespace Slp.r2rml4net.Server.Controllers
                     Response.AppendHeader("Content-Disposition", "attachment; filename=Dump.ttl");
                     Response.Flush();
                     processor.GenerateTriples(mapping, turtleWriter);
-                    Response.End();
                 }
+
+                Response.End();
             }
             catch (Exception)
             {
