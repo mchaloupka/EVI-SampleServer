@@ -18,13 +18,11 @@ namespace Slp.r2rml4net.Server.Writers
     {
 
         private readonly XmlWriter _xmlWriter;
-        private bool _firstVariable;
         private bool _firstResult;
         private bool _handledBoolean;
 
         public XmlSparqlWriter(Stream outputStream)
         {
-            _firstVariable = true;
             _firstResult = true;
             _handledBoolean = false;
 
@@ -40,10 +38,12 @@ namespace Slp.r2rml4net.Server.Writers
         {
             base.StartResultsInternal();
             _xmlWriter.WriteStartElement("sparql", SparqlSpecsHelper.SparqlNamespace);
+            _xmlWriter.WriteStartElement("head");
         }
 
         protected override void HandleBooleanResultInternal(bool result)
         {
+            _xmlWriter.WriteEndElement();
             _xmlWriter.WriteStartElement("boolean");
             _xmlWriter.WriteString(result.ToString().ToLower());
             _xmlWriter.WriteEndElement();
@@ -53,12 +53,6 @@ namespace Slp.r2rml4net.Server.Writers
 
         protected override bool HandleVariableInternal(string var)
         {
-            if (_firstVariable)
-            {
-                _xmlWriter.WriteStartElement("head");
-                _firstVariable = false;
-            }
-
             _xmlWriter.WriteStartElement("variable");
             _xmlWriter.WriteAttributeString("name", var);
             _xmlWriter.WriteEndElement();
@@ -68,14 +62,9 @@ namespace Slp.r2rml4net.Server.Writers
 
         protected override bool HandleResultInternal(SparqlResult result)
         {
-            if (!_firstVariable)
-            {
-                _xmlWriter.WriteEndElement();
-                _firstVariable = true;
-            }
-
             if (_firstResult)
             {
+                _xmlWriter.WriteEndElement();
                 _xmlWriter.WriteStartElement("results");
                 _firstResult = false;
             }
@@ -139,7 +128,7 @@ namespace Slp.r2rml4net.Server.Writers
 
         protected override void EndResultsInternal(bool ok)
         {
-            if (!_firstVariable || !_firstResult)
+            if (!_firstResult)
             {
                 _xmlWriter.WriteEndElement();
             }

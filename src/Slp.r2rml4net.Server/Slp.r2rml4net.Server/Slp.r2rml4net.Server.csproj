@@ -183,6 +183,7 @@
     <Compile Include="R2RML\R2RMLStorageFactoryForQueryHandler.cs" />
     <Compile Include="R2RML\StorageWrapper.cs" />
     <Compile Include="Writers\TurtleRdfWriter.cs" />
+    <Compile Include="Writers\XmlRdfWriter.cs" />
     <Compile Include="Writers\XmlSparqlWriter.cs" />
   </ItemGroup>
   <ItemGroup>
