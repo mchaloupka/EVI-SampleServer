@@ -17,7 +17,7 @@
 		rr:class suklc:addiction;
 	];
 	rr:predicateObjectMap [
-		rr:predicate suklp:label_cze;
+		rr:predicate suklp:label;
 		rr:objectMap [ rr:column "label"; ];
 	];
 .
@@ -33,7 +33,7 @@
 		rr:class suklc:doping;
 	];
 	rr:predicateObjectMap [
-		rr:predicate suklp:label_cze;
+		rr:predicate suklp:label;
 		rr:objectMap [ rr:column "label"; ];
 	];
 .
@@ -51,16 +51,8 @@
 		rr:class suklc:way;
 	];
 	rr:predicateObjectMap [
-		rr:predicate suklp:label_cze;
-		rr:objectMap [ rr:column "label"; ];
-	];
-	rr:predicateObjectMap [
-		rr:predicate suklp:label_en;
+		rr:predicate suklp:label;
 		rr:objectMap [ rr:column "label_en"; ];
-	];
-	rr:predicateObjectMap [
-		rr:predicate suklp:label_inn;
-		rr:objectMap [ rr:column "label_lat"; ];
 	];
 .
 
@@ -78,16 +70,8 @@
 		rr:class suklc:form;
 	];
 	rr:predicateObjectMap [
-		rr:predicate suklp:label_cze;
-		rr:objectMap [ rr:column "label"; ];
-	];
-	rr:predicateObjectMap [
-		rr:predicate suklp:label_en;
+		rr:predicate suklp:label;
 		rr:objectMap [ rr:column "label_en"; ];
-	];
-	rr:predicateObjectMap [
-		rr:predicate suklp:label_inn;
-		rr:objectMap [ rr:column "label_lat"; ];
 	];
 	rr:predicateObjectMap [
 		rr:predicate suklp:way;
@@ -116,16 +100,8 @@
 		rr:class suklc:medicinal;
 	];
 	rr:predicateObjectMap [
-		rr:predicate suklp:label_cze;
-		rr:objectMap [ rr:column "label"; ];
-	];
-	rr:predicateObjectMap [
-		rr:predicate suklp:label_en;
+		rr:predicate suklp:label;
 		rr:objectMap [ rr:column "label_en"; ];
-	];
-	rr:predicateObjectMap [
-		rr:predicate suklp:label_inn;
-		rr:objectMap [ rr:column "label_inn"; ];
 	];
 	rr:predicateObjectMap [
 		rr:predicate suklp:addiction;
@@ -176,11 +152,11 @@
 		rr:class suklc:curative;
 	];
 	rr:predicateObjectMap [
-		rr:predicate suklp:label_cze;
+		rr:predicate suklp:label;
 		rr:objectMap [ rr:column "label"; ];
 	];
 	rr:predicateObjectMap [
-		rr:predicate suklp:label_ext;
+		rr:predicate suklp:extendedLabel;
 		rr:objectMap [ rr:column "label_ext"; ];
 	];
 	rr:predicateObjectMap [
