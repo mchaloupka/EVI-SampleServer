@@ -153,6 +153,18 @@ namespace Slp.r2rml4net.Server.Controllers
 
         public void Dump()
         {
+            Response.Clear();
+            Response.ClearContent();
+            Response.ClearHeaders();
+            Response.Buffer = false;
+            Response.BufferOutput = false;
+            Response.AppendHeader("Content-Disposition", "attachment; filename=Dump.ttl");
+            string query = "CONSTRUCT { ?s ?p ?o. } WHERE { ?s ?p ?o. }";
+            Query(query);
+        }
+
+        public void DumpNative()
+        {
             try
             {
                 var mapping = StorageWrapper.Mapping;

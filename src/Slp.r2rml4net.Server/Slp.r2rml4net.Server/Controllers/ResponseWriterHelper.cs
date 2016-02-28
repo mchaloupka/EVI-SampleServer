@@ -37,6 +37,7 @@ namespace Slp.r2rml4net.Server.Controllers
                 WriteCommonHeaders();
 
                 _response.ContentType = _sparqlContentType;
+                _response.Flush();
 
                 _start = false;
             }
@@ -49,6 +50,7 @@ namespace Slp.r2rml4net.Server.Controllers
                 WriteCommonHeaders();
 
                 _response.ContentType = _rdfContentType;
+                _response.Flush();
 
                 _start = false;
             }
