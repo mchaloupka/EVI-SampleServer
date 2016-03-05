@@ -128,7 +128,7 @@
 	rr:logicalTable [ rr:tableName "medicinal_product"; ];
 	rr:subjectMap [
 		rr:template "http://opendata.sukl.cz/dlp/medicinalproduct/{product_id}";
-		rr:class sukl:curative;
+		rr:class sukl:medicinalProduct;
 	];
 	rr:predicateObjectMap [
 		rr:predicate sukl:label;
