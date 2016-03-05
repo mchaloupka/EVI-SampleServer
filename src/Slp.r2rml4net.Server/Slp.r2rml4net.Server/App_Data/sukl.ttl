@@ -195,8 +195,8 @@
 		rr:objectMap [
 			rr:parentTriplesMap <#CompositionTriples>;
 			rr:joinCondition [
-				rr:child "medicinal_id";
-				rr:parent "medicinal_id";
+				rr:child "product_id";
+				rr:parent "product_id";
 			];
 		];
 	];
@@ -205,7 +205,7 @@
 <#CompositionTriples> a rr:TriplesMap;
 	rr:logicalTable [ rr:tableName "composition"; ];
 	rr:subjectMap [
-		rr:template "http://opendata.sukl.cz/dlp/composition/{curative_id}/{medicinal_id}";
+		rr:template "http://opendata.sukl.cz/dlp/composition/{product_id}/{ingredient_id}";
 		rr:class sukl:composition;
 	];
 	rr:predicateObjectMap [
@@ -235,8 +235,8 @@
 		rr:objectMap [
 			rr:parentTriplesMap <#IngredientTriples>;
 			rr:joinCondition [
-				rr:child "medicinal_id";
-				rr:parent "medicinal_id";
+				rr:child "ingredient_id";
+				rr:parent "ingredient_id";
 			];
 		];
 	];
