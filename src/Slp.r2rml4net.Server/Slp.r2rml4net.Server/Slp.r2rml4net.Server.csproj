@@ -131,6 +131,14 @@
     <Content Include="App_Data\ctia_r2rml_opt.ttl" />
     <Content Include="App_Data\demography_r2rml.ttl" />
     <Content Include="App_Data\rdf_config.ttl" />
+    <Content Include="App_Data\Samples\1.txt" />
+    <Content Include="App_Data\Samples\2.txt" />
+    <Content Include="App_Data\Samples\3.txt" />
+    <Content Include="App_Data\Samples\4.txt" />
+    <Content Include="App_Data\Samples\4S.txt" />
+    <Content Include="App_Data\Samples\5.txt" />
+    <Content Include="App_Data\Samples\5S.txt" />
+    <Content Include="App_Data\Samples\6.txt" />
     <Content Include="App_Data\sukl.ttl" />
     <Content Include="Content\css\bootstrap-theme.css" />
     <Content Include="Content\css\bootstrap-theme.min.css">
@@ -207,6 +215,8 @@
     <Content Include="Content\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\fonts\FontAwesome.otf" />
     <Content Include="Views\Main\AppStartFailed.cshtml" />
+    <Content Include="Views\Main\Mapping.cshtml" />
+    <Content Include="Views\Main\Sample.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

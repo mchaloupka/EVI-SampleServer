@@ -22,9 +22,10 @@ namespace Slp.r2rml4net.Server.Controllers
         /// <summary>
         /// The query page
         /// </summary>
-        public ActionResult Query()
+        [ValidateInput(false)]
+        public ActionResult Query(string query)
         {
-            return View();
+            return View(null, null, query);
         }
 
         /// <summary>
@@ -35,7 +36,12 @@ namespace Slp.r2rml4net.Server.Controllers
             return View(Slp.r2rml4net.Server.R2RML.StorageWrapper.StartException);
         }
 
-        /// <summary>
+        public ActionResult Mapping()
+        {
+            return View();
+        }
+
+/// <summary>
         /// Called before the action method is invoked.
         /// </summary>
         /// <param name="filterContext">Information about the current request and action.</param>
@@ -43,10 +49,15 @@ namespace Slp.r2rml4net.Server.Controllers
         {
             base.OnActionExecuting(filterContext);
 
-            if (Slp.r2rml4net.Server.R2RML.StorageWrapper.StartException != null && filterContext.ActionDescriptor.ActionName != "AppStartFailed")
+            if (Slp.r2rml4net.Server.R2RML.StorageWrapper.StartException != null && filterContext.ActionDescriptor.ActionName != nameof(AppStartFailed))
             {
-                filterContext.Result = RedirectToAction("AppStartFailed");
+                filterContext.Result = RedirectToAction(nameof(AppStartFailed));
             }
         }
-	}
+
+        public ActionResult Sample()
+        {
+            return View();
+        }
+    }
 }

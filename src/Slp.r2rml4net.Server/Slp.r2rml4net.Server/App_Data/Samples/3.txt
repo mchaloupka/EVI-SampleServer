@@ -1,0 +1,9 @@
+prefix sukl: <http://opendata.sukl.cz/dlp/>
+prefix suklc: <http://opendata.sukl.cz/dlp/c/>
+prefix suklp: <http://opendata.sukl.cz/dlp/p/> 
+
+SELECT ?label WHERE {
+   <http://opendata.sukl.cz/dlp/medicinalproduct/29047> sukl:hasComposition ?composition.
+   ?composition sukl:contains ?ingredient.
+   ?ingredient sukl:label ?label.
+}

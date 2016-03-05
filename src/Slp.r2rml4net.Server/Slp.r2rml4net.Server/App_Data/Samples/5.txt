@@ -1,0 +1,30 @@
+prefix sukl: <http://opendata.sukl.cz/dlp/>
+prefix result: <http://sample.org/>
+
+CONSTRUCT {
+   ?id a result:curative;
+      result:label ?label;
+      result:package ?package;
+      result:way ?way;
+      result:addiction ?add;
+      result:contain ?ingredient.
+}
+WHERE {
+   {
+      ?id a sukl:medicinalProduct;
+         sukl:hasAddiction ?a;
+         sukl:label ?label;
+         sukl:package ?package;
+         sukl:hasWay ?w.
+      ?w sukl:label ?way.
+      ?a sukl:label ?add.
+   }
+   UNION
+   {
+      ?id a sukl:medicinalProduct;
+         sukl:hasAddiction ?a;
+         sukl:hasComposition ?composition.
+      ?composition sukl:contains ?i.
+      ?i sukl:label ?ingredient.
+   }
+}

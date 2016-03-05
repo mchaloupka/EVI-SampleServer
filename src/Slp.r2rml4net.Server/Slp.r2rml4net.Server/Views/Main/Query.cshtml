@@ -3,18 +3,21 @@
 }
 
 <script type="text/javascript">
-    function write_exception(name, message) {
+    function write_exception(name, message)
+    {
         $('#exception-box strong').html(name);
         $('#exception-box span').html(message);
         $('#exception-box').removeClass('hidden');
     }
 
-    function writeTableHeading(variables) {
+    function writeTableHeading(variables)
+    {
         var row = $('<tr></tr>');
 
         row.append('<td>#</td>');
 
-        for (var i = 0; i < variables.length; i++) {
+        for (var i = 0; i < variables.length; i++)
+        {
             var v = variables[i];
 
             row.append($('<td>' + v + '</td>'));
@@ -23,11 +26,14 @@
         $('#results-table thead').append(row);
     }
 
-    function getValue(row, variable) {
-        for (var i = 0; i < row.Bindings.length; i++) {
+    function getValue(row, variable)
+    {
+        for (var i = 0; i < row.Bindings.length; i++)
+        {
             var b = row.Bindings[i];
-            
-            if (b.Variable == variable) {
+
+            if (b.Variable == variable)
+            {
                 return b.Value;
             }
         }
@@ -35,11 +41,13 @@
         return '';
     }
 
-    function writeTableRow(index, datarow, variables) {
+    function writeTableRow(index, datarow, variables)
+    {
         var row = $('<tr></tr>');
         row.append('<td>' + index + '</td>');
 
-        for (var i = 0; i < variables.length; i++) {
+        for (var i = 0; i < variables.length; i++)
+        {
             var v = variables[i];
             var value = getValue(datarow, v);
 
@@ -49,7 +57,8 @@
         $('#results-table tbody').append(row);
     }
 
-    function query() {
+    function query()
+    {
         if ($('#execute-button').hasClass('active'))
             return;
 
@@ -59,11 +68,13 @@
         $('#results-table thead').html('');
         $('#results-table tbody').html('');
 
-        $.post('@Url.Action("GetQueryResult", "Json")', { query: $('#query-textarea').val() }, function (data) {
-            if (data.Success == true) {
+        $.post('@Url.Action("GetQueryResult", "Json")', { query: $('#query-textarea').val() }, function(data) {
+            if (data.Success == true)
+            {
                 writeTableHeading(data.Data.Variables);
 
-                for (var i = 0; i < data.Data.Rows.length; i++) {
+                for (var i = 0; i < data.Data.Rows.length; i++)
+                {
                     writeTableRow(i + 1, data.Data.Rows[i], data.Data.Variables);
                 }
 
@@ -71,12 +82,13 @@
                 $('.result-time').html(data.Data.TimeElapsedInMs);
                 $('#result-panel').removeClass('hidden');
             }
-            else {
+            else
+            {
                 write_exception(data.ExceptionName, data.ExceptionMessage);
             }
 
             $('#execute-button').removeClass('active');
-        }).fail(function () {
+        }).fail(function() {
             write_exception('POST error', 'POST request failed');
 
             $('#execute-button').removeClass('active');
@@ -90,11 +102,18 @@
         $('#open-button').attr('href', href);
     }
 
-    $(document).ready(function () {
-        $('#execute-button').click(function () { query(); });
+    $(document).ready(function() {
+        $('#execute-button').click(function() { query(); });
         $('#open-button').click(function () { updateOpen(); });
+
+        if (window.location.hash)
+        {
+            $('#query-textarea').html(decodeURI(window.location.hash));
+        }
     });
 </script>
+
+<h3>Endpoint</h3>
 
 <div id="exception-box" class="alert alert-danger hidden">
     <h4>Query failed</h4>
@@ -106,7 +125,7 @@
         <h3 class="panel-title">SPARQL Query</h3>
     </div>
     <div class="panel-body">
-        <textarea id="query-textarea" class="form-control" rows="4"></textarea>
+        <textarea id="query-textarea" class="form-control" rows="10">@Model</textarea>
     </div>
     <div class="panel-footer">
         <button id="execute-button" type="button" class="btn btn-primary has-spinner">
