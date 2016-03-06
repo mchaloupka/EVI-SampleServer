@@ -18,7 +18,7 @@ namespace Slp.r2rml4net.Server.Writers
 
         public TurtleRdfWriter(Stream outputStream)
         {
-            _outputStream = new StreamWriter(outputStream, Encoding.UTF8, 64 * 1024, true);
+            _outputStream = new StreamWriter(outputStream, new UTF8Encoding(false), 64 * 1024, true);
             _turtleFormatter = new TurtleFormatter();
         }
 

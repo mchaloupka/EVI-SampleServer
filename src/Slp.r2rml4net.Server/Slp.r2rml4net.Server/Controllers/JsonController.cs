@@ -124,12 +124,19 @@ namespace Slp.r2rml4net.Server.Controllers
         [ValidateInput(false)]
         public void Query(string query)
         {
+            Response.Clear();
+            Query_Internal(query);
+            Response.End();
+        }
+
+        private void Query_Internal(string query)
+        {
             try
             {
                 using (var turtleWriter = new TurtleRdfWriter(Response.OutputStream))
-                using(var xmlWriter = new XmlSparqlWriter(Response.OutputStream))
+                using (var xmlWriter = new XmlSparqlWriter(Response.OutputStream))
                 {
-                    var responseWriterHelper = new ResponseWriterHelper(Response, xmlWriter, "application/xml", turtleWriter, "text/turtle");
+                    var responseWriterHelper = new ResponseWriterHelper(Response, xmlWriter, "application/xml", turtleWriter, "application/turtle");
                     StorageWrapper.Storage.Query(responseWriterHelper, responseWriterHelper, query);
                 }
             }
@@ -158,7 +165,8 @@ namespace Slp.r2rml4net.Server.Controllers
             Response.BufferOutput = false;
             Response.AppendHeader("Content-Disposition", "attachment; filename=Dump.ttl");
             string query = "CONSTRUCT { ?s ?p ?o. } WHERE { ?s ?p ?o. }";
-            Query(query);
+            Query_Internal(query);
+            Response.End();
         }
 
         public void DumpNative()

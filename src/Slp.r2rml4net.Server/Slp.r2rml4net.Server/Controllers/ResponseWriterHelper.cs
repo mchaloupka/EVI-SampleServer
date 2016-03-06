@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 using System.Web;
 using Slp.r2rml4net.Server.Writers;
 using VDS.RDF;
@@ -27,7 +28,7 @@ namespace Slp.r2rml4net.Server.Controllers
 
         private void WriteCommonHeaders()
         {
-            
+            _response.ContentEncoding = new UTF8Encoding(false);
         }
 
         private void HandleSparqlStart()

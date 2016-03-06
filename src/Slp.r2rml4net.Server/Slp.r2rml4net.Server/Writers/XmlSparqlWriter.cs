@@ -28,15 +28,16 @@ namespace Slp.r2rml4net.Server.Writers
 
             _xmlWriter = XmlWriter.Create(outputStream, new XmlWriterSettings()
             {
-                Indent = true,
-                IndentChars = "  ",
-                CloseOutput = false
+                Indent = false,
+                CloseOutput = false,
+                Encoding = new UTF8Encoding(false)
             });
         }
 
         protected override void StartResultsInternal()
         {
             base.StartResultsInternal();
+            _xmlWriter.WriteStartDocument();
             _xmlWriter.WriteStartElement("sparql", SparqlSpecsHelper.SparqlNamespace);
             _xmlWriter.WriteStartElement("head");
         }
@@ -140,6 +141,7 @@ namespace Slp.r2rml4net.Server.Writers
             }
 
             _xmlWriter.WriteEndElement();
+            _xmlWriter.WriteEndDocument();
         }
 
         public void Dispose()
