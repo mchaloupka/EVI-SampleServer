@@ -132,8 +132,6 @@ namespace Slp.r2rml4net.Server.Controllers
                     var responseWriterHelper = new ResponseWriterHelper(Response, xmlWriter, "application/xml", turtleWriter, "text/turtle");
                     StorageWrapper.Storage.Query(responseWriterHelper, responseWriterHelper, query);
                 }
-
-                Response.End();
             }
             catch (Exception ex)
             {
@@ -184,8 +182,6 @@ namespace Slp.r2rml4net.Server.Controllers
                     Response.Flush();
                     processor.GenerateTriples(mapping, turtleWriter);
                 }
-
-                Response.End();
             }
             catch (Exception)
             {

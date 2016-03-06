@@ -2,12 +2,12 @@ prefix sukl: <http://opendata.sukl.cz/dlp/>
 prefix result: <http://sample.org/>
 
 CONSTRUCT {
-   ?id a result:curative;
+   ?id a result:medicinalProduct;
       result:label ?label;
       result:package ?package;
       result:way ?way;
-      result:addiction ?add;
-      result:contain ?ingredient.
+      result:addiction ?add.
+   ?mid result:contain ?ingredient.
 }
 WHERE {
    {
@@ -21,7 +21,7 @@ WHERE {
    }
    UNION
    {
-      ?id a sukl:medicinalProduct;
+      ?mid a sukl:medicinalProduct;
          sukl:hasAddiction ?a;
          sukl:hasComposition ?composition.
       ?composition sukl:contains ?i.

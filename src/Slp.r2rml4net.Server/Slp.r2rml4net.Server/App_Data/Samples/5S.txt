@@ -13,7 +13,7 @@ WHERE {
    }
    UNION
    {
-      ?id a sukl:medicinalProduct;
+      ?mid a sukl:medicinalProduct;
          sukl:hasAddiction ?a;
          sukl:hasComposition ?composition.
       ?composition sukl:contains ?i.
