@@ -15,7 +15,6 @@ namespace Slp.Evi.Server
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-            routes.IgnoreRoute("sparql");
 
             routes.MapRoute(
                 name: "Default",

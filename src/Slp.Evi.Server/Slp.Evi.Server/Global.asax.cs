@@ -16,7 +16,7 @@ namespace Slp.Evi.Server
         /// </summary>
         protected void Application_Start()
         {
-            ConfigurationLoader.AddObjectFactory(new R2RMLStorageFactoryForQueryHandler());
+            ConfigurationLoader.AddObjectFactory(new EviStorageFactoryForQueryHandler());
 
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);

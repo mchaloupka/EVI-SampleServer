@@ -1,7 +1,8 @@
 ﻿using System;
 using System.IO;
-using Slp.r2rml4net.Storage;
-using Slp.r2rml4net.Storage.Bootstrap;
+using Slp.Evi.Storage;
+using Slp.Evi.Storage.Bootstrap;
+using Slp.Evi.Storage.Database.Vendor.MsSql;
 using TCode.r2rml4net;
 using TCode.r2rml4net.Mapping.Fluent;
 
@@ -15,13 +16,13 @@ namespace Slp.Evi.Server.R2RML
         /// <summary>
         /// The storage
         /// </summary>
-        private static R2RMLStorage _storage = null;
+        private static EviQueryableStorage _storage = null;
 
         /// <summary>
         /// Gets the storage.
         /// </summary>
         /// <value>The storage.</value>
-        public static R2RMLStorage Storage { get { return _storage; } }
+        public static EviQueryableStorage Storage { get { return _storage; } }
 
         /// <summary>
         /// Application start.
@@ -44,8 +45,8 @@ namespace Slp.Evi.Server.R2RML
                     Mapping = R2RMLLoader.Load(fs);
                 }
 
-                var sqlFactory = new r2rml4net.Storage.Database.Vendor.MsSql.MsSqlDbFactory();
-                _storage = new R2RMLStorage(sqlFactory.CreateSqlDb(ConnectionString), Mapping, new R2RMLDefaultStorageFactory());
+                var sqlFactory = new MsSqlDbFactory();
+                _storage = new EviQueryableStorage(sqlFactory.CreateSqlDb(ConnectionString), Mapping, new DefaultEviQueryableStorageFactory());
             }
             catch (Exception e)
             {

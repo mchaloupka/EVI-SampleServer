@@ -1,5 +1,5 @@
 ﻿using System;
-using Slp.r2rml4net.Storage;
+using Slp.Evi.Storage;
 using VDS.RDF.Configuration;
 
 namespace Slp.Evi.Server.R2RML
@@ -7,7 +7,7 @@ namespace Slp.Evi.Server.R2RML
     /// <summary>
     /// Factory for the dotNetRDF config
     /// </summary>
-    public class R2RMLStorageFactoryForQueryHandler : IObjectFactory
+    public class EviStorageFactoryForQueryHandler : IObjectFactory
     {
         /// <summary>
         /// Returns whether this Factory is capable of creating objects of the given type
@@ -15,7 +15,7 @@ namespace Slp.Evi.Server.R2RML
         /// <param name="t">Target Type</param>
         public bool CanLoadObject(Type t)
         {
-            if (t == typeof(R2RMLStorage))
+            if (t == typeof(EviQueryableStorage))
                 return true;
             else
                 return false;

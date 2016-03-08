@@ -45,8 +45,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="DatabaseSchemaReader, Version=1.4.2.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DatabaseSchemaReader.1.4.2.2\lib\net40\DatabaseSchemaReader.dll</HintPath>
+    <Reference Include="DatabaseSchemaReader, Version=1.4.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DatabaseSchemaReader.1.4.4.0\lib\net40\DatabaseSchemaReader.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="dotNetRDF, Version=1.0.9.3683, Culture=neutral, PublicKeyToken=6055ffe4c97cc780, processorArchitecture=MSIL">
@@ -66,8 +66,8 @@
       <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Slp.r2rml4net.Storage, Version=0.0.2.174, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\dotnetr2rmlstore.0.0.2-prealpha\lib\net45\Slp.r2rml4net.Storage.dll</HintPath>
+    <Reference Include="Slp.Evi.Storage, Version=0.0.3.205, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\slp.evi.0.0.3-prealpha\lib\net45\Slp.Evi.Storage.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
@@ -130,7 +130,6 @@
     <Content Include="App_Data\ctia_r2rml.ttl" />
     <Content Include="App_Data\ctia_r2rml_opt.ttl" />
     <Content Include="App_Data\demography_r2rml.ttl" />
-    <Content Include="App_Data\rdf_config.ttl" />
     <Content Include="App_Data\Samples\1.txt" />
     <Content Include="App_Data\Samples\2.txt" />
     <Content Include="App_Data\Samples\3.txt" />
