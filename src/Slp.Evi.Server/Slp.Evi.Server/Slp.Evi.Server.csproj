@@ -127,9 +127,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\ctia_r2rml.ttl" />
-    <Content Include="App_Data\ctia_r2rml_opt.ttl" />
-    <Content Include="App_Data\demography_r2rml.ttl" />
     <Content Include="App_Data\Samples\1.txt" />
     <Content Include="App_Data\Samples\2.txt" />
     <Content Include="App_Data\Samples\3.txt" />
