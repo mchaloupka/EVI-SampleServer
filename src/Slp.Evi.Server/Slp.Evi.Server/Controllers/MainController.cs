@@ -13,7 +13,7 @@ namespace Slp.Evi.Server.Controllers
         /// </summary>
         public ActionResult Index()
         {
-            return RedirectToAction("Query");
+            return RedirectToAction("Sample");
         }
 
         /// <summary>
