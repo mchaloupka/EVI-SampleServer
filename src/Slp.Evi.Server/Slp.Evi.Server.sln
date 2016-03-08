@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slp.r2rml4net.Server", "Slp.r2rml4net.Server\Slp.r2rml4net.Server.csproj", "{3AF0CF1B-95E7-420D-9058-DB08C0426AC8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slp.Evi.Server", "Slp.Evi.Server\Slp.Evi.Server.csproj", "{3AF0CF1B-95E7-420D-9058-DB08C0426AC8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
