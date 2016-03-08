@@ -1,20 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using Slp.r2rml4net.Server.Models.Json;
-using Slp.r2rml4net.Server.R2RML;
-using Slp.r2rml4net.Server.Writers;
+using Slp.Evi.Server.Models.Json;
+using Slp.Evi.Server.R2RML;
+using Slp.Evi.Server.Writers;
 using TCode.r2rml4net;
 using VDS.RDF;
 using VDS.RDF.Query;
 
-namespace Slp.r2rml4net.Server.Controllers
+namespace Slp.Evi.Server.Controllers
 {
     /// <summary>
     /// Controller for methods called from JS

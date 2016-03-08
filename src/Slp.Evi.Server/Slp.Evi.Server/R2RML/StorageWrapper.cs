@@ -5,7 +5,7 @@ using Slp.r2rml4net.Storage.Bootstrap;
 using TCode.r2rml4net;
 using TCode.r2rml4net.Mapping.Fluent;
 
-namespace Slp.r2rml4net.Server.R2RML
+namespace Slp.Evi.Server.R2RML
 {
     /// <summary>
     /// Wrapper for the <see cref="R2RmlStorage"/>

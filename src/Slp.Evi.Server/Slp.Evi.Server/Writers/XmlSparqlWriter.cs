@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 using VDS.RDF;
 using VDS.RDF.Parsing;
@@ -11,7 +8,7 @@ using VDS.RDF.Parsing.Handlers;
 using VDS.RDF.Query;
 using VDS.RDF.Writing;
 
-namespace Slp.r2rml4net.Server.Writers
+namespace Slp.Evi.Server.Writers
 {
     public class XmlSparqlWriter
         : BaseResultsHandler, IDisposable

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Slp.r2rml4net.Server.Models.Json
+﻿namespace Slp.Evi.Server.Models.Json
 {
     /// <summary>
     /// Result model for json

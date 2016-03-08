@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using Slp.Evi.Server.R2RML;
 
-namespace Slp.r2rml4net.Server.Controllers
+namespace Slp.Evi.Server.Controllers
 {
     /// <summary>
     /// Main controller
@@ -33,7 +30,7 @@ namespace Slp.r2rml4net.Server.Controllers
         /// </summary>
         public ActionResult AppStartFailed()
         {
-            return View(Slp.r2rml4net.Server.R2RML.StorageWrapper.StartException);
+            return View(StorageWrapper.StartException);
         }
 
         public ActionResult Mapping()
@@ -49,7 +46,7 @@ namespace Slp.r2rml4net.Server.Controllers
         {
             base.OnActionExecuting(filterContext);
 
-            if (Slp.r2rml4net.Server.R2RML.StorageWrapper.StartException != null && filterContext.ActionDescriptor.ActionName != nameof(AppStartFailed))
+            if (StorageWrapper.StartException != null && filterContext.ActionDescriptor.ActionName != nameof(AppStartFailed))
             {
                 filterContext.Result = RedirectToAction(nameof(AppStartFailed));
             }

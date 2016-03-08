@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
-namespace Slp.r2rml4net.Server
+namespace Slp.Evi.Server
 {
     /// <summary>
     /// Bundle configuration

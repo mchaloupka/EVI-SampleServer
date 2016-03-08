@@ -2,7 +2,7 @@
 using Slp.r2rml4net.Storage;
 using VDS.RDF.Configuration;
 
-namespace Slp.r2rml4net.Server.R2RML
+namespace Slp.Evi.Server.R2RML
 {
     /// <summary>
     /// Factory for the dotNetRDF config

@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using Slp.r2rml4net.Server.R2RML;
+using Slp.Evi.Server.R2RML;
 using VDS.RDF.Configuration;
 
-namespace Slp.r2rml4net.Server
+namespace Slp.Evi.Server
 {
     /// <summary>
     /// Mvc Application

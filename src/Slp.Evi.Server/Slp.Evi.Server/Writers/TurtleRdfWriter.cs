@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using VDS.RDF;
 using VDS.RDF.Parsing.Handlers;
 using VDS.RDF.Writing;
 using VDS.RDF.Writing.Formatting;
 
-namespace Slp.r2rml4net.Server.Writers
+namespace Slp.Evi.Server.Writers
 {
     public class TurtleRdfWriter : BaseRdfHandler, IDisposable
     {

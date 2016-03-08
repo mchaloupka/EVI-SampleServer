@@ -1,11 +1,11 @@
 using System;
 using System.Text;
 using System.Web;
-using Slp.r2rml4net.Server.Writers;
+using Slp.Evi.Server.Writers;
 using VDS.RDF;
 using VDS.RDF.Query;
 
-namespace Slp.r2rml4net.Server.Controllers
+namespace Slp.Evi.Server.Controllers
 {
     public class ResponseWriterHelper : IRdfHandler, ISparqlResultsHandler
     {
