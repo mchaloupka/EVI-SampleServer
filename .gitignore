@@ -6,6 +6,7 @@
 *.user
 *.sln.docstates
 *.sln.GhostDoc.xml
+.vs
 
 # Build results
 
@@ -153,4 +154,4 @@ $RECYCLE.BIN/
 
 # Mac desktop service store files
 .DS_Store
-/src/Slp.Evi.Server/.vs/config/applicationhost.config
+

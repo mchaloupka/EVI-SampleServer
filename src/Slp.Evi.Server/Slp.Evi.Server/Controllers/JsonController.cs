@@ -135,7 +135,7 @@ namespace Slp.Evi.Server.Controllers
                     StorageWrapper.Storage.Query(responseWriterHelper, responseWriterHelper, query);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Response.StatusCode = 400;
                 Response.Write("Query failed");

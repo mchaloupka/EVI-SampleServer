@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using Microsoft.Extensions.Logging.Abstractions;
 using Slp.Evi.Storage;
 using Slp.Evi.Storage.Bootstrap;
 using Slp.Evi.Storage.Database.Vendor.MsSql;
@@ -46,7 +47,7 @@ namespace Slp.Evi.Server.R2RML
                 }
 
                 var sqlFactory = new MsSqlDbFactory();
-                _storage = new EviQueryableStorage(sqlFactory.CreateSqlDb(ConnectionString), Mapping, new DefaultEviQueryableStorageFactory());
+                _storage = new EviQueryableStorage(sqlFactory.CreateSqlDb(ConnectionString), Mapping, new DefaultEviQueryableStorageFactory(new NullLoggerFactory()));
             }
             catch (Exception e)
             {
