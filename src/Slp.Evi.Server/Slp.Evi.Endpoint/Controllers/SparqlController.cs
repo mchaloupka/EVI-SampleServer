@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -21,9 +18,19 @@ namespace Slp.Evi.Endpoint.Controllers
             _logger = logger;
         }
 
-        // GET api/values
         [HttpGet]
         public void Get([FromQuery] string query, [FromServices]IStorageWrapper wrapper)
+        {
+            QueryImpl(query, wrapper);
+        }
+
+        [HttpPost]
+        public void Post([FromForm] string query, [FromServices] IStorageWrapper wrapper)
+        {
+            QueryImpl(query, wrapper);
+        }
+
+        private void QueryImpl(string query, IStorageWrapper wrapper)
         {
             try
             {
@@ -37,8 +44,13 @@ namespace Slp.Evi.Endpoint.Controllers
             }
             catch (NotImplementedException e)
             {
-                Response.StatusCode = StatusCodes.Status400BadRequest;
                 _logger.LogError(new EventId(), e, "Query failed - not implemented");
+                Response.StatusCode = StatusCodes.Status400BadRequest;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(new EventId(), e, "Query failed - another exception");
+                throw;
             }
         }
     }
