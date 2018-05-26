@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slp.Evi.Server", "Slp.Evi.Server\Slp.Evi.Server.csproj", "{3AF0CF1B-95E7-420D-9058-DB08C0426AC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slp.Evi.Endpoint", "Slp.Evi.Endpoint\Slp.Evi.Endpoint.csproj", "{232F9324-94A8-4DDF-BC43-E0B01ADC1CCC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{3AF0CF1B-95E7-420D-9058-DB08C0426AC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3AF0CF1B-95E7-420D-9058-DB08C0426AC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3AF0CF1B-95E7-420D-9058-DB08C0426AC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{232F9324-94A8-4DDF-BC43-E0B01ADC1CCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{232F9324-94A8-4DDF-BC43-E0B01ADC1CCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{232F9324-94A8-4DDF-BC43-E0B01ADC1CCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{232F9324-94A8-4DDF-BC43-E0B01ADC1CCC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {22D753BB-E179-4AE6-B517-44D0A2BB61A0}
 	EndGlobalSection
 EndGlobal
