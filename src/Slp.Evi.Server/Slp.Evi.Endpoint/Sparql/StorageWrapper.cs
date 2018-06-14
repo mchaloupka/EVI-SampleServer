@@ -35,7 +35,7 @@ namespace Slp.Evi.Endpoint.Sparql
             }
 
             var sqlFactory = new MsSqlDbFactory();
-            _storage = new EviQueryableStorage(sqlFactory.CreateSqlDb(connectionString), mapping, new DefaultEviQueryableStorageFactory(loggerFactory));
+            _storage = new EviQueryableStorage(sqlFactory.CreateSqlDb(connectionString, configuration.Value.QueryTimeout), mapping, new DefaultEviQueryableStorageFactory(loggerFactory));
         }
 
         public void Query(IRdfHandler rdfHandler, ISparqlResultsHandler sparqlResultsHandler, string query)
