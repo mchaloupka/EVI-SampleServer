@@ -1,8 +1,0 @@
-prefix sukl: <http://opendata.sukl.cz/dlp/>
-
-SELECT ?id
-WHERE {
-   ?id a sukl:medicinalProduct;
-       sukl:hasAddiction ?add.
-   ?add sukl:id "E".
-}
