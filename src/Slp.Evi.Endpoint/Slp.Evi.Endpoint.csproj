@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.1.5" />
-    <PackageReference Include="slp.evi" Version="0.0.6-beta557" />
+    <PackageReference Include="slp.evi" Version="0.0.6" />
   </ItemGroup>
 
   <ItemGroup>
