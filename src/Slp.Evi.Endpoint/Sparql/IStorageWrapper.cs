@@ -1,5 +1,4 @@
-﻿using Slp.Evi.Endpoint.Controllers;
-using VDS.RDF;
+﻿using VDS.RDF;
 
 namespace Slp.Evi.Endpoint.Sparql
 {

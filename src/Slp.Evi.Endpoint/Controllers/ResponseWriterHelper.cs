@@ -1,5 +1,4 @@
 using System;
-using System.Text;
 using Microsoft.AspNetCore.Http;
 using Slp.Evi.Endpoint.Sparql.Writers;
 using VDS.RDF;

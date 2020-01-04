@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Slp.Evi.Endpoint.Sparql
+﻿namespace Slp.Evi.Endpoint.Sparql
 {
     public class StorageConfiguration
     {

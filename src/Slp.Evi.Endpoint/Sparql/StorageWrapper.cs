@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting;
+﻿using System.IO;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.Extensions.Options;
-using Slp.Evi.Endpoint.Controllers;
 using Slp.Evi.Storage;
 using Slp.Evi.Storage.Bootstrap;
 using Slp.Evi.Storage.Database.Vendor.MsSql;
@@ -22,7 +16,7 @@ namespace Slp.Evi.Endpoint.Sparql
     {
         private readonly EviQueryableStorage _storage;
 
-        public StorageWrapper(IOptions<StorageConfiguration> configuration, IHostingEnvironment environment, ILoggerFactory loggerFactory)
+        public StorageWrapper(IOptions<StorageConfiguration> configuration, IHostEnvironment environment, ILoggerFactory loggerFactory)
         {
             var connectionString = configuration.Value.ConnectionString;
             var mappingFilePath = configuration.Value.MappingFilePath;
