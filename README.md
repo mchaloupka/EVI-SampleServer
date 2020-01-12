@@ -13,6 +13,7 @@ docker run --rm -it \
     -v {...}:/mapping \
     -e EVI_STORAGE__MAPPINGFILEPATH=/mapping/mapping.ttl \
     -e EVI_STORAGE__CONNECTIONSTRING="Server=host.docker.internal,1433;Database=benchmark=;User Id=sa;Password=p@ssw0rd" \
+    -p 5000:80 \
     mchaloupka/slp.evi:latest
 ```
 Where you replace `{...}` by the path to the folder where you have the mapping file `mapping.ttl`. The environment variables then declares where to find the mapping and which connection string to use.
