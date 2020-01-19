@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="slp.evi" Version="0.0.7-alpha582" />
+    <PackageReference Include="slp.evi" Version="0.0.7-alpha583" />
   </ItemGroup>
 
   <ItemGroup>
