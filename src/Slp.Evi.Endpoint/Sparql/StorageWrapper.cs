@@ -23,7 +23,7 @@ namespace Slp.Evi.Endpoint.Sparql
             IR2RML mapping;
             using (var fs = new FileStream(path, FileMode.Open))
             {
-                mapping = R2RMLLoader.Load(fs);
+                mapping = R2RMLLoader.Load(fs, new MappingOptions());
             }
 
             _storage = new MsSqlEviStorage(mapping, connectionString, configuration.Value.QueryTimeout);

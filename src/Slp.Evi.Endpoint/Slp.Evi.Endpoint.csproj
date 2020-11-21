@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="slp.evi.mssql" Version="0.0.7-alpha662" />
+    <PackageReference Include="slp.evi.mssql" Version="0.0.7-alpha669" />
   </ItemGroup>
 
   <ItemGroup>
