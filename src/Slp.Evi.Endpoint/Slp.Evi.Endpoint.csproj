@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="slp.evi.mssql" Version="0.0.8" />
+    <PackageReference Include="slp.evi.mssql" Version="0.0.9" />
   </ItemGroup>
 
   <ItemGroup>

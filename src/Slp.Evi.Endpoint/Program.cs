@@ -2,6 +2,8 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Slp.Evi.Storage.MsSql;
+using System;
 
 namespace Slp.Evi.Endpoint
 {
@@ -9,7 +11,20 @@ namespace Slp.Evi.Endpoint
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            if(args.Length == 1 && args[0] == "--version")
+            {
+                PrintVersion();
+            }
+            else
+            {
+                CreateHostBuilder(args).Build().Run();
+            }
+        }
+
+        private static void PrintVersion()
+        {
+            var eviAssembly = typeof(MsSqlEviStorage).Assembly;
+            Console.WriteLine($"EVI version: {eviAssembly.GetName().Version}");
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
