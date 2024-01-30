@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="slp.evi.mssql" Version="0.0.10-beta730" />
+    <PackageReference Include="slp.evi.mysql" Version="0.0.10-beta730" />
   </ItemGroup>
 
   <ItemGroup>
