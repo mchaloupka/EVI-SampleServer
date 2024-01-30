@@ -5,11 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="slp.evi.mssql" Version="0.0.9" />
+    <PackageReference Include="slp.evi.mssql" Version="0.0.10-beta730" />
   </ItemGroup>
 
   <ItemGroup>
