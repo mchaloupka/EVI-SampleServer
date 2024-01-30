@@ -7,20 +7,19 @@
     <title>EVI - YASGUI</title>
     <link href='yasgui.min.css' rel='stylesheet' type='text/css' />
     <style>
-        .yasgui .endpointText {
+        .yasgui .controlbar {
             display: none !important;
         }
     </style>
 </head>
 <body>
-    <div id="yasgui">
-        <script src='yasgui.min.js'></script>
-        <script type="text/javascript">
-            var yasgui = YASGUI(document.getElementById("yasgui"),
-                {
-                    yasqe: { sparql: { endpoint: '/api/sparql'}}
-                });
-        </script>
-    </div>
+<div id="yasgui"></div>
+<script src='yasgui.min.js'></script>
+<script type="text/javascript">
+    const yasgui = new Yasgui(document.getElementById("yasgui"), {
+        requestConfig: { endpoint: "/api/sparql" },
+        copyEndpointOnNewTab: false,
+    })
+</script>
 </body>
 </html>
