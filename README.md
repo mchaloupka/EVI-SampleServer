@@ -57,7 +57,7 @@ docker run --rm -it \
     -v {...}:/mapping \
     -e EVI_STORAGE__DATABASETYPE=MySql
     -e EVI_STORAGE__MAPPINGFILEPATH=/mapping/mapping.ttl \
-    -e EVI_STORAGE__CONNECTIONSTRING="Server=host.docker.internal,1433;Database=benchmark=;User Id=sa;Password=p@ssw0rd" \
+    -e EVI_STORAGE__CONNECTIONSTRING="Server=host.docker.internal;Port=3306;User ID=root;Password=psw;Database=benchmark" \
     -p 5000:8080 \
     mchaloupka/slp.evi:latest
 ```
